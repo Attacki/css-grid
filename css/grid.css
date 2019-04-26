@@ -1,0 +1,58 @@
+
+.grid-container{
+    display: grid;
+    padding:50px 0 0;
+    /* 表示第三列最大为33.3%宽度，最小是200px */
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:50px 50px;
+}
+
+
+.grid-container[data-sequence="1"]{
+    /* 绝对单位 */
+    /* grid-template-columns:100px 100px;
+    grid-template-rows:100px 100px; */
+
+    /* 百分比 auto-fill表示自动按照指定单位填充 */
+    grid-template-columns:repeat(auto-fill,20%);
+    grid-template-rows:50px 50px;
+}
+
+.grid-item{
+    text-align: center;
+    box-sizing: border-box;
+    border: 1px solid rgb(255, 255, 255);
+    font-size: 25px;
+    line-height: 50px;
+}
+
+.grid-container[data-sequence="2"]{
+    /* 表示第三列最大为33.3%宽度，最小是200px */
+    grid-template-columns: 1fr 1fr minmax(500px, 1fr);
+    grid-template-rows:50px 50px;
+}
+
+.grid-container[data-sequence="3"]{
+    /* auto表示浏览器自己决定宽度,自适应填充 */
+    grid-template-columns: 100px auto 100px;
+    grid-template-rows:50px 50px;
+}
+
+.grid-container[data-sequence="4"]{
+    grid-template-columns:repeat(auto-fill,20%);
+    grid-template-rows:50px 50px;
+    /* gap间距 */
+    grid-row-gap:20px;
+    grid-column-gap:6.666666%;
+    /* 缩写 */
+    /* grid-gap:20px; */
+}
+
+.grid-container[data-sequence="5"]{
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+    grid-template-areas:'a b c'
+                        'd e f'
+                        'g h i';
+}
+
